@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elite Indian Investors — FA + TA + News-based stock scoring on Telegram</title>
-<meta name="description" content="Elite Indian Investors delivers a composite fundamental, technical, and news score for Indian equities to a private Telegram group. Informational only — not investment advice. ₹1/month, cancel anytime.">
+<title>Elite Indian Investors — AI-Powered Corporate Event Monitoring</title>
+<meta name="description" content="Elite Indian Investors monitors public corporate announcements — orders, contracts, M&amp;A, filings, and more — across tracked companies, delivered instantly to Telegram, Discord, and email. Not investment advice. ₹499/month, cancel anytime.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -24,6 +24,7 @@
       <a href="shipping.html">Shipping Policy</a>
       <a href="refund.html">Refund &amp; Cancellation</a>
       <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="disclaimer.html">Disclaimer</a>
       <a href="contact.html">Contact Us</a>
     </nav>
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
@@ -33,22 +34,22 @@
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track mono">
     <span>SAMPLE FEED — ILLUSTRATIVE, NOT LIVE DATA</span>
-    <span class="up">RELIANCE ▲ 1.2%</span>
-    <span class="down">TCS ▼ 0.4%</span>
-    <span class="up">HDFCBANK ▲ 0.8%</span>
-    <span class="down">INFY ▼ 0.6%</span>
-    <span class="up">ITC ▲ 2.1%</span>
-    <span class="up">ICICIBANK ▲ 0.3%</span>
-    <span class="down">WIPRO ▼ 1.0%</span>
+    <span class="up">RELIANCE — new order win, ₹1,200Cr</span>
+    <span>TCS — investor presentation filed</span>
+    <span class="up">HDFCBANK — board approves buyback</span>
+    <span>INFY — management change announced</span>
+    <span class="up">ITC — Q1 regulatory filing published</span>
+    <span>ICICIBANK — press release issued</span>
+    <span class="up">WIPRO — new contract announced</span>
   </div>
 </div>
 
 <section class="hero">
   <div class="wrap">
     <div>
-      <div class="eyebrow">FA · TA · News-Based Scoring</div>
-      <h1>Stock research, scored before it reaches you — not after.</h1>
-      <p class="lead">Elite Indian Investors runs every stock through fundamentals, technicals, and news sentiment, then delivers the resulting composite score straight to a private Telegram group. No noise, no manual digging on your end.</p>
+      <div class="eyebrow">AI-Powered Corporate Event Monitoring</div>
+      <h1>Monitor public corporate announcements across thousands of companies.</h1>
+      <p class="lead">Elite Indian Investors scans public disclosures and filings around the clock and delivers a plain-language alert the moment a tracked company publishes an order win, contract, merger, filing, or other material event. No scores, no calls — just the announcement, fast.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="https://t.me/EliteIndianInvestorsbot">Message the bot: /subscribe</a>
         <a class="btn btn-ghost" href="#pricing">See pricing</a>
@@ -56,16 +57,16 @@
     </div>
     <div class="signal-card mono" aria-hidden="true">
       <div class="row">
-        <div><div class="ticker-name">RELIANCE</div><div class="sub">FA 2.4 · TA 1.8 · News +0.6</div></div>
-        <span class="badge buy">STRONG</span>
+        <div><div class="ticker-name">RELIANCE</div><div class="sub">New order win · ₹1,200Cr · 2m ago</div></div>
+        <span class="badge hold">ORDER</span>
       </div>
       <div class="row">
-        <div><div class="ticker-name">TCS</div><div class="sub">FA 1.1 · TA 0.3 · News −0.2</div></div>
-        <span class="badge hold">NEUTRAL</span>
+        <div><div class="ticker-name">TCS</div><div class="sub">Investor presentation filed · 14m ago</div></div>
+        <span class="badge hold">FILING</span>
       </div>
       <div class="row">
-        <div><div class="ticker-name">ZEEL</div><div class="sub">Major negative news</div></div>
-        <span class="badge sell">WEAK</span>
+        <div><div class="ticker-name">ZEEL</div><div class="sub">Management change announced · 1h ago</div></div>
+        <span class="badge hold">MGMT</span>
       </div>
     </div>
   </div>
@@ -73,24 +74,56 @@
 
 <section class="section">
   <div class="wrap">
-    <h2>How a score gets built</h2>
-    <p class="section-sub">Every score combines three independent checks before it's sent — no single factor decides on its own.</p>
+    <h2>How it works</h2>
+    <p class="section-sub">Public disclosures, tracked continuously, reported straight — no interpretation added.</p>
     <div class="feature-grid">
       <div class="feature">
-        <span class="tag">01 · FUNDAMENTALS</span>
-        <h3>Verified financial data</h3>
-        <p>Fundamental figures are pulled from verified filings and financial data sources, not estimated — the gate is a deterministic calculation, not a guess.</p>
+        <span class="tag">01 · SOURCES</span>
+        <h3>Public disclosures &amp; filings</h3>
+        <p>We monitor company websites, exchange filings, and press releases — publicly available sources, checked continuously.</p>
       </div>
       <div class="feature">
-        <span class="tag">02 · TECHNICALS</span>
-        <h3>Price &amp; trend signals</h3>
-        <p>Technical scoring reflects price action and trend strength at the time of the call, giving context for entry and exit timing.</p>
+        <span class="tag">02 · CLASSIFICATION</span>
+        <h3>AI-assisted extraction</h3>
+        <p>Announcements are parsed and categorized by event type automatically, so you see what happened without reading the full filing.</p>
       </div>
       <div class="feature">
-        <span class="tag">03 · NEWS</span>
-        <h3>News-sentiment override</h3>
-        <p>Major negative news isn't just a small deduction — it can override the other factors entirely and pull a stock's composite score sharply lower.</p>
+        <span class="tag">03 · DELIVERY</span>
+        <h3>Sent the moment it's published</h3>
+        <p>No daily digest lag — alerts go out as soon as an announcement is detected, to wherever you want them.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>What we track</h2>
+    <p class="section-sub">Every announcement is tagged by category so you can tell what happened at a glance.</p>
+    <div class="event-tags">
+      <span class="tag-pill">New Orders</span>
+      <span class="tag-pill">Contract Wins</span>
+      <span class="tag-pill">Mergers &amp; Acquisitions</span>
+      <span class="tag-pill">Demergers</span>
+      <span class="tag-pill">Joint Ventures</span>
+      <span class="tag-pill">Management Changes</span>
+      <span class="tag-pill">Press Releases</span>
+      <span class="tag-pill">Regulatory Filings</span>
+      <span class="tag-pill">Investor Presentations</span>
+      <span class="tag-pill">Corporate Actions</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Delivered instantly to</h2>
+    <p class="section-sub">Pick where you want to be notified.</p>
+    <div class="channel-row">
+      <div class="channel"><span class="dot"></span>Telegram</div>
+      <div class="channel"><span class="dot"></span>Discord</div>
+      <div class="channel"><span class="dot"></span>Email</div>
+      <div class="channel"><span class="dot"></span>Web Dashboard</div>
     </div>
   </div>
 </section>
@@ -101,10 +134,10 @@
     <p class="section-sub">One plan. Cancel whenever you like — no lock-in.</p>
     <div class="pricing-card">
       <div class="eyebrow" style="text-align:center;">MONTHLY MEMBERSHIP</div>
-      <div class="price">₹1<small>/month</small></div>
+      <div class="price">₹499<small>/month</small></div>
       <ul>
-        <li>Composite FA + TA + News score for tracked stocks in a private Telegram group</li>
-        <li>Fundamentals, technicals, and news scored independently, then combined</li>
+        <li>Real-time corporate event alerts for your tracked companies</li>
+        <li>Orders, contracts, M&amp;A, filings, and more — sourced from public disclosures</li>
         <li>Billed monthly via Razorpay — cancel anytime</li>
         <li>No lifetime plan, no hidden add-ons</li>
       </ul>
@@ -115,7 +148,7 @@
 
 <div class="disclaimer">
   <div class="wrap">
-    <strong>Not investment advice.</strong> Elite Indian Investors is an information and research-scoring service, not an investment advisory service. Scores reflect a scoring model applied to public data and are not a recommendation to buy, sell, or hold any security. We are not registered with SEBI as a Research Analyst or Investment Adviser. Investing in securities carries risk, including loss of principal — do your own research or consult a licensed financial adviser before making any investment decision.
+    <strong>Not investment advice.</strong> Elite Indian Investors provides technology for monitoring publicly available corporate announcements and news. We do not provide investment advice, trading recommendations, portfolio management, financial planning, or research reports. Users are solely responsible for their own investment decisions. Read the full <a href="disclaimer.html">Disclaimer</a>.
   </div>
 </div>
 
@@ -127,6 +160,7 @@
       <a href="shipping.html">Shipping Policy</a>
       <a href="refund.html">Refund &amp; Cancellation</a>
       <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="disclaimer.html">Disclaimer</a>
       <a href="contact.html">Contact Us</a>
     </nav>
   </div>
