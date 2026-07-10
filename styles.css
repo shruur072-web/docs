@@ -200,6 +200,14 @@ nav.primary a[aria-current="page"] { color: var(--gold); }
 
 .cta-row { display: flex; gap: 14px; margin-top: 26px; flex-wrap: wrap; }
 
+.cta-fallback {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+.cta-fallback a { color: var(--text-muted); text-decoration: underline; }
+.cta-fallback a:hover { color: var(--gold); }
+
 .btn {
   display: inline-block;
   padding: 13px 24px;
@@ -306,11 +314,23 @@ nav.primary a[aria-current="page"] { color: var(--gold); }
   color: var(--text);
   font-size: 0.92rem;
 }
+a.channel-row-link { text-decoration: none; }
+a.channel-row-link:hover .channel { border-color: var(--gold); }
 .channel-row .channel .dot {
   width: 8px; height: 8px; border-radius: 50%;
   background: var(--gold);
   flex-shrink: 0;
 }
+.channel-status {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  padding: 2px 9px;
+  border-radius: 999px;
+  margin-left: 2px;
+}
+.channel-status.live { background: rgba(63, 166, 107, 0.16); color: var(--green); }
+.channel-status.soon { background: var(--gold-soft); color: var(--gold); }
 
 /* ---------- Pricing ---------- */
 
