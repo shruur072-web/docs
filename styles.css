@@ -1,0 +1,367 @@
+/* ==========================================================================
+   Elite Indian Investors — shared stylesheet
+   Palette: deep navy/charcoal ground, warm off-white text, gold accent
+   (premium/"elite" cue), muted green/red for buy/sell signal motifs.
+   Type: Fraunces (display, serif — premium, editorial) + Inter (body) +
+   IBM Plex Mono (ticker tape, prices, data).
+   ========================================================================== */
+
+:root {
+  --bg: #0A0F1C;
+  --bg-panel: #101A2E;
+  --bg-panel-raised: #141F36;
+  --border: rgba(230, 227, 216, 0.10);
+  --text: #E9E6DC;
+  --text-muted: #93A0B8;
+  --gold: #CDA349;
+  --gold-soft: rgba(205, 163, 73, 0.14);
+  --green: #3FA66B;
+  --red: #C1594A;
+  --radius: 6px;
+  --maxw: 1080px;
+}
+
+* { box-sizing: border-box; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+  letter-spacing: -0.01em;
+}
+
+a { color: var(--gold); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+p { color: var(--text-muted); margin: 0 0 1em; }
+
+.mono { font-family: 'IBM Plex Mono', monospace; }
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Header / nav ---------- */
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: rgba(10, 15, 28, 0.92);
+  backdrop-filter: blur(8px);
+  z-index: 20;
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.logo {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--text);
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.logo:hover { text-decoration: none; }
+.logo .mark { color: var(--gold); }
+
+nav.primary { display: flex; gap: 28px; }
+nav.primary a {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+nav.primary a:hover, nav.primary a[aria-current="page"] {
+  color: var(--text);
+  text-decoration: none;
+}
+nav.primary a[aria-current="page"] { color: var(--gold); }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  width: 40px;
+  height: 40px;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 720px) {
+  nav.primary {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    padding: 12px 24px 20px;
+    gap: 14px;
+    display: none;
+  }
+  nav.primary.open { display: flex; }
+  .nav-toggle { display: block; }
+}
+
+/* ---------- Ticker tape (signature element) ---------- */
+
+.ticker {
+  border-bottom: 1px solid var(--border);
+  background: #070B15;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 9px 0;
+}
+.ticker-track {
+  display: inline-block;
+  padding-left: 100%;
+  animation: ticker-scroll 38s linear infinite;
+}
+.ticker-track span {
+  font-size: 0.82rem;
+  margin-right: 36px;
+  color: var(--text-muted);
+}
+.ticker-track span.up { color: var(--green); }
+.ticker-track span.down { color: var(--red); }
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 76px 0 64px;
+  border-bottom: 1px solid var(--border);
+}
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: center;
+}
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: 1fr; }
+}
+
+.eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4.4vw, 3rem);
+  color: var(--text);
+}
+.hero p.lead {
+  font-size: 1.08rem;
+  max-width: 46ch;
+}
+
+.cta-row { display: flex; gap: 14px; margin-top: 26px; flex-wrap: wrap; }
+
+.btn {
+  display: inline-block;
+  padding: 13px 24px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+}
+.btn-primary {
+  background: var(--gold);
+  color: #14100a;
+}
+.btn-primary:hover { background: #dcb45e; text-decoration: none; }
+.btn-ghost {
+  border-color: var(--border);
+  color: var(--text);
+}
+.btn-ghost:hover { border-color: var(--gold); text-decoration: none; }
+
+/* ---------- Signal card mock (hero visual, pure CSS) ---------- */
+
+.signal-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px;
+}
+.signal-card .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.signal-card .row:last-child { border-bottom: none; }
+.signal-card .ticker-name { font-weight: 600; color: var(--text); }
+.signal-card .sub { font-size: 0.78rem; color: var(--text-muted); }
+.badge {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+.badge.buy { background: rgba(63, 166, 107, 0.16); color: var(--green); }
+.badge.sell { background: rgba(193, 89, 74, 0.16); color: var(--red); }
+.badge.hold { background: var(--gold-soft); color: var(--gold); }
+
+/* ---------- Feature grid ---------- */
+
+.section { padding: 64px 0; border-bottom: 1px solid var(--border); }
+.section h2 { font-size: 1.6rem; color: var(--text); margin-bottom: 10px; }
+.section .section-sub { max-width: 60ch; margin-bottom: 40px; }
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+@media (max-width: 780px) {
+  .feature-grid { grid-template-columns: 1fr; }
+}
+.feature {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.feature .tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+  display: block;
+}
+.feature h3 { font-size: 1.05rem; color: var(--text); }
+.feature p { font-size: 0.92rem; margin-bottom: 0; }
+
+/* ---------- Pricing ---------- */
+
+.pricing-card {
+  max-width: 380px;
+  margin: 0 auto;
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--gold-soft);
+  border-radius: 10px;
+  padding: 36px 30px;
+  text-align: center;
+}
+.price {
+  font-family: 'Fraunces', serif;
+  font-size: 2.6rem;
+  color: var(--text);
+  margin: 6px 0 2px;
+}
+.price sup { font-size: 1.1rem; vertical-align: super; color: var(--text-muted); }
+.price small { font-size: 1rem; color: var(--text-muted); font-family: 'Inter', sans-serif; }
+.pricing-card ul { list-style: none; padding: 0; margin: 22px 0 26px; text-align: left; }
+.pricing-card li {
+  padding: 8px 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  border-bottom: 1px solid var(--border);
+}
+.pricing-card li:last-child { border-bottom: none; }
+
+/* ---------- Disclaimer strip ---------- */
+
+.disclaimer {
+  background: #070B15;
+  padding: 26px 0;
+}
+.disclaimer .wrap {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  max-width: 760px;
+}
+.disclaimer strong { color: var(--text); }
+
+/* ---------- Footer ---------- */
+
+footer.site-footer { padding: 40px 0 60px; }
+footer.site-footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+footer.site-footer nav { display: flex; gap: 20px; flex-wrap: wrap; }
+footer.site-footer nav a { color: var(--text-muted); }
+footer.site-footer nav a:hover { color: var(--gold); text-decoration: none; }
+
+/* ---------- Legal page body (privacy/refund/terms/contact) ---------- */
+
+.legal {
+  padding: 56px 0 72px;
+}
+.legal .wrap { max-width: 760px; }
+.legal h1 { font-size: 2rem; color: var(--text); margin-bottom: 6px; }
+.legal .updated { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 36px; font-family: 'IBM Plex Mono', monospace; }
+.legal h2 {
+  font-size: 1.15rem;
+  color: var(--text);
+  margin-top: 38px;
+  padding-top: 4px;
+}
+.legal p, .legal li { color: var(--text-muted); font-size: 0.96rem; }
+.legal ul, .legal ol { padding-left: 22px; }
+.legal li { margin-bottom: 8px; }
+.legal a { color: var(--gold); }
+
+.contact-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px 28px;
+  margin-top: 8px;
+}
+.contact-card dt { font-family: 'IBM Plex Mono', monospace; font-size: 0.76rem; color: var(--gold); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 16px; }
+.contact-card dt:first-child { margin-top: 0; }
+.contact-card dd { margin: 4px 0 0; color: var(--text); }
